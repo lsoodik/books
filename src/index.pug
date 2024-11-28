@@ -1,0 +1,40 @@
+block variables
+  - var name = "hug"
+
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Document
+  link(rel='stylesheet' type='text/css' href='../output/main.css')
+  
+body 
+  header 
+    div.header-section
+      div.header-container.container
+        span.header-logo Bookshop
+        nav.header-menu
+          ul.header-list
+            each name in ['books', 'audiobooks', 'stationery & gifts', 'blog']
+              li.header-item
+                a(href="#")= name
+        div.header-icons 
+          span 
+            a(href="#")
+              img(src="../src/svg/user.svg", alt="user") 
+          span 
+            a(href="#") 
+              img(src="../src/svg/search.svg", alt="search")
+          span.basket
+            a(href="#") 
+              img(src="../src/svg/shopbag.svg", alt="shopbag")
+              span.count.active 1
+  main 
+    div.main-section
+      div.slider 
+        div.slider-container.container
+          div.banners
+          div.dots
+            
+
+  script(src='../output/main.js')
