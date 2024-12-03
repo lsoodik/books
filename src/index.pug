@@ -1,12 +1,8 @@
-block variables
-  - var name = "hug"
-
 doctype html
 head
   meta(charset='UTF-8')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   title Document
-  link(rel='stylesheet' type='text/css' href='../output/main.css')
   
 body 
   header 
@@ -32,9 +28,15 @@ body
   main 
     div.main-section
       div.slider 
+        a(href="#") 
+          img(src="../src/svg/promo1.svg", alt="promo1").slider-promos.promo1
+        a(href="#")
+          img(src="../src/svg/promo2.svg", alt="promo2").slider-promos.promo2 
         div.slider-container.container
           div.banners
           div.dots
-            
-
-  script(src='../output/main.js')
+      div.catalog 
+        div.catalog-container.container 
+          div.categories-aside 
+          div.books 
+                 
