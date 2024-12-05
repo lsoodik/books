@@ -20,7 +20,6 @@ function initSlider () {
         let imageDiv = `<div class="image n${index} ${index === 0 ? "active" : ""}" style="background-image:url(${image.url});" data-index="${index}"></div>`;
         sliderImages.innerHTML +=imageDiv;
     });
-    console.log(images.length)
 }
 
 function initCircles() {
