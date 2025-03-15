@@ -1,11 +1,8 @@
-var path = require("path");
+const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const webpack = require('webpack'); // only add this if you don't have yet
-
-// replace accordingly './.env' with the path of your .env file
-require('dotenv').config({ path: './.env' });
+const Dotenv = require("dotenv-webpack"); // Добавлено для работы с .env
 
 module.exports = {
   plugins: [
@@ -14,9 +11,7 @@ module.exports = {
       template: "./src/index.pug",
       filename: "index.html",
     }),
-    new webpack.DefinePlugin({
-      'process.env': JSON.stringify(process.env),
-    }),
+    new Dotenv(), // Подключение dotenv-webpack
   ],
   entry: "./src/index.js",
   output: {
@@ -38,6 +33,13 @@ module.exports = {
         },
       },
     ],
+  },
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    compress: true,
+    port: 9000,
   },
   optimization: {
     minimizer: [`...`, new CssMinimizerPlugin()],

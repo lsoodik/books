@@ -10,6 +10,7 @@
 
 a {
   color: inherit;
+  cursor: pointer;
 }
 
 ul {
@@ -101,6 +102,12 @@ header {
   opacity: 1;
 }
 
+.main-section {
+  max-width: 1440px;
+  margin: 0 auto;
+
+}
+
 .banners {
   position: relative;
   display: flex;
@@ -127,6 +134,11 @@ header {
   }
 }
 
+.slider {
+  position: relative;
+  margin-bottom: 105px;
+}
+
 .slider-container {
   flex-direction: column;
   align-items: center;
@@ -135,15 +147,21 @@ header {
 
 .slider-promos {
   position: absolute;
-  z-index: 3;
+  z-index: 1;
 
-  &.promo1{
+  &.promo1 {
     margin-top: 70px;
     right: 70px;
   }
-  &.promo2{
-    right: 0px;
+  &.promo2 {
+    right: 0;
     bottom: 0;
-    margin-bottom: 10px;
   }
+}
+
+.categories-aside  {
+  background-color: #EFEEF6;
+  width: 100px;
+  height: 100px;
+  left: 0;
 }
